@@ -8,10 +8,11 @@ public struct PasswordValidation {
         let password = "123456"
 
         if validation.isValid(password: password) {
-
-            print("valid password")
+            let predicate = NSPredicate(format: "SELF MATCHES %@", "^[0-9]{6}$")
+            if predicate.evaluate(with: password) {
+                
+            }
         } else {
-
             print("invalid password")
         }
     }
