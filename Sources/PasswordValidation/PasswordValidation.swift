@@ -18,7 +18,6 @@ public struct PasswordValidation {
     }
 
     func isValid(password: String) -> Bool {
-
-        return false
+        return password.count == 6 && password.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
     }
 }
